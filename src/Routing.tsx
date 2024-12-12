@@ -1,13 +1,15 @@
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Screen/Home";
 
 export default function Routing() {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index path="home" element={<Home />} />
-      </Route>
-    </Routes>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [{ index: true, element: <Home /> }],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
