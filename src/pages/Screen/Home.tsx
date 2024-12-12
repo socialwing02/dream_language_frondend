@@ -1,7 +1,11 @@
+import Hero from "../Home/Hero";
+
 export default function Home() {
   return (
-    <div>
-      <img src="hero-img.webp" alt="" />
-    </div>
+    <>
+      <Hero />
+
+      <div className="min-h-screen"></div>
+    </>
   );
 }
