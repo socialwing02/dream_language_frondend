@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import image from "../../assets/images/eng.png";
 import OurValues from "../About/OurValues";
 import whyus from "@/assets/images/whyus.webp";
 import { fadeIn } from "@/utils/variant";

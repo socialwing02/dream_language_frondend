@@ -13,9 +13,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {},
-      boxShadow: {
-        custom: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
-      },
+
       keyframes: {
         "accordion-down": {
           from: {

@@ -7,6 +7,7 @@ type Props = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   label: string;
   name: string;
+  required: boolean;
 };
 
 export default function InputField({ label, name, ...props }: Props) {
@@ -18,7 +19,7 @@ export default function InputField({ label, name, ...props }: Props) {
       >
         {label}
       </label>
-      <Input {...props} className="border outline-[1]" />
+      <Input {...props} name={name} className="border outline-[1]" />
     </div>
   );
 }
