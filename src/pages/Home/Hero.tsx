@@ -2,31 +2,20 @@ import Navbar from "@/components/Navbar";
 import "../../index.css";
 import { Button } from "@/components/ui/Button";
 import heroImg from "@/assets/images/bg-img.jpg";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { staggerChild, staggerParent } from "@/utils/variant";
 
 export default function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollY } = useScroll({
-    target: ref,
-  });
-
-  const y = useTransform(scrollY, [0, 100, 200, 300], [0, 100, 150, 200]);
-  const opacity = useTransform(scrollY, [0, 100, 180, 300], [1, 0.4, 0.6, 0]);
-  const scale = useTransform(scrollY, [0, 50, 100, 180], [1, 1.2, 1.3, 1.3]);
-
   return (
-    <section className="relative min-h-screen overflow-hidden" ref={ref}>
+    <section className="relative min-h-screen overflow-hidden">
       <img
         src={heroImg}
         alt=""
         className="w-full h-full absolute object-cover"
+        loading="lazy"
       />
 
       <motion.div
-        style={{ y, opacity, scale }}
         className="absolute inset-0 m-auto text-white grid justify-items-center gap-4 h-[14rem]"
         variants={staggerParent()}
         initial="initial"

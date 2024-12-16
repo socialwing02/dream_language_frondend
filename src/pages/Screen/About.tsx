@@ -1,69 +1,99 @@
-import React from "react";
+import { motion } from "framer-motion";
 import image from "../../assets/images/eng.png";
+import OurValues from "../About/OurValues";
+import whyus from "@/assets/images/whyus.webp";
+import { fadeIn } from "@/utils/variant";
 
 function About() {
   return (
-    <div className="lg:items-center  flex-col self-center flex justify-center ">
-      <div className="container px-4 py-4 min-h-screen mx-auto border-2 gap-12 flex flex-col sm:flex-row justify-center items-center ">
-        <div>
-          <img className="h-auto w-100 rounded-lg lg:w-[500px]	" src={image} />
-        </div>
-        <div className="text-center py-9 lg:w-[600px]">
-          <h1 className="text-xl ">I am a student</h1>
-          <h6 className="text-4xl py-2">I Can Learn English </h6>
+    <>
+      <motion.div
+        className="grid gap-4 place-content-center text-center py-10"
+        variants={fadeIn("up", 0.2)}
+        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="show"
+      >
+        <h1 className="text-5xl text-[#ac8dca] ">Our Story</h1>
+        <h5 className="text-2xl">A tale of tech brilliance and growth</h5>
+      </motion.div>
+      <div className="container  px-4 py-4 mx-auto gap-6 md:gap-10 flex flex-col lg:flex-row justify-center items-center ">
+        <motion.div
+          variants={fadeIn("left", 0.2)}
+          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="show"
+        >
+          <img
+            className="h-auto w-100 rounded-lg lg:w-[500px]	"
+            src={whyus}
+            loading="lazy"
+          />
+        </motion.div>
+        <motion.div
+          className=" py-9 lg:w-[600px]"
+          variants={fadeIn("right", 0.2)}
+          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="show"
+        >
+          <h1 className="text-3xl font-bold text-left text-[#853cc9]">
+            We believe in
+          </h1>
           <p className="m-2">
             About us. Established in 1947, our language school has continuously
             enhanced its methodology and efficiency, and has become a renowned
             partner for those who want to improve their English language skills
-            in a fast and reliable way.
+            in a fast and reliable way. <br />
+            <br />
+            br About us. Established in 1947, our language school has
+            continuously enhanced improve their English language skills in a
+            fast and reliable way. br About us. Established in 1947, our
+            language school has continuously enhanced improve their English
+            language skills in a fast and reliable way.
           </p>
-
-          <p className="text-lx m-2">
-            About us. Established in 1947, our language school has continuously
-            enhanced  improve their English language skills
-            in a fast and reliable way.
-          </p>
-
-          <p className="m-2">
-            About us. Established in 1947, our language school has continuously
-            enhanced its methodology and efficiency, and has become a renowned
-            partner for those who want to improve their English language skills
-            in a fast and reliable way.
-          </p>
-          
-        </div>
+        </motion.div>
       </div>
-      <div className="container px-4 py-4 min-h-screen mx-auto border-2 gap-12 flex flex-col-reverse sm:flex-row justify-center items-center ">
-        <div className="text-center py-9 lg:w-[600px]">
-          <h1 className="text-xl ">I am a student</h1>
-          <h6 className="text-4xl py-2">I Can Learn English </h6>
+
+      <OurValues />
+
+      <div className="container px-4  mx-auto md:gap-12 gap-6 flex flex-col-reverse lg:flex-row justify-center items-center py-[3rem]">
+        <motion.div
+          className="py-9 lg:w-[600px]"
+          variants={fadeIn("left", 0.2)}
+          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="show"
+        >
+          <h1 className="text-[clamp(2rem,2.8vw,7rem)] text-pretty">
+            Why choose us ?
+          </h1>
           <p className="m-2">
             About us. Established in 1947, our language school has continuously
             enhanced its methodology and efficiency, and has become a renowned
             partner for those who want to improve their English language skills
             in a fast and reliable way.
-          </p>
-
-          <p className="text-lx m-2">
-            About us. Established in 1947, our language school has continuously
-            enhanced  improve their English language skills
-            in a fast and reliable way.
-          </p>
-
-          <p className="m-2">
+            <br />
+            <br />
             About us. Established in 1947, our language school has continuously
             enhanced its methodology and efficiency, and has become a renowned
             partner for those who want to improve their English language skills
             in a fast and reliable way.
           </p>
-          
-          
-        </div>
-        <div>
-          <img className="h-auto w-100 rounded-lg lg:w-[500px]	" src={image} />
-        </div>
+        </motion.div>
+        <motion.div
+          variants={fadeIn("right", 0.2)}
+          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="show"
+        >
+          <img
+            className=" aspect-[1] object-cover w-[500px]  rounded-lg"
+            src={whyus}
+          />
+        </motion.div>
       </div>
-     </div>
+    </>
   );
 }
 export default About;

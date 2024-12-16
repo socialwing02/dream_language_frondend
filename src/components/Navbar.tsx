@@ -2,7 +2,7 @@ import { navlist } from "@/constants/data";
 import { Button } from "./ui/Button";
 import { NavLink } from "react-router-dom";
 import hamburgIcon from "@/assets/svg/hamburg.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import { motion } from "framer-motion";
 import { staggerChild, staggerParent } from "@/utils/variant";
@@ -20,6 +20,15 @@ export default function Navbar({ className }: Props) {
   const buttonstyle = className
     ? "bg-white text-black hover:text-white "
     : undefined;
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <section>
@@ -77,7 +86,7 @@ export default function Navbar({ className }: Props) {
         </motion.div>
       </nav>
 
-      <Sidebar isOpen={isOpen} />
+      {isOpen && <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />}
     </section>
   );
 }
