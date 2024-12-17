@@ -86,7 +86,7 @@ export default function Navbar({ className }: Props) {
         </motion.div>
       </nav>
 
-      {isOpen && <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />}
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </section>
   );
 }

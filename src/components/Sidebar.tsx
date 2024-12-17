@@ -1,6 +1,6 @@
 import { navlist } from "@/constants/data";
-import { MouseEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 type Props = {
   isOpen: boolean;
@@ -8,29 +8,25 @@ type Props = {
 };
 
 export default function Sidebar({ isOpen, setIsOpen }: Props) {
-  const navigate = useNavigate();
-
-  function handleClick(e: MouseEvent<HTMLLIElement>, path: string) {
-    e.preventDefault();
+  function handleClose() {
     setIsOpen(false);
-    navigate(path);
   }
 
   return (
     <div
-      className={`absolute right-0 h-screen top-0 border-2 bg-white border-l-2 overflow-hidden transition-all duration-300 ease-in-out ${
-        isOpen ? "w-[300px]" : "w-0 m-0 p-0"
-      }`}
+      className={`fixed inset-0 h-screen [left:30%]  border-2 bg-white border-l-2 overflow-hidden ${
+        !isOpen && "translate-x-full"
+      } transition-all duration-500  `}
     >
       <h1>menus</h1>
 
-      <div className="grid place-content-center h-full gap-4 border-black">
+      <div className="grid mt-[6rem] ml-14 gap-4 border-black">
         {navlist.map((item) => (
           <li
-            className="list-none text-2xl hover:underline"
-            onClick={(e) => handleClick(e, item.link)}
+            className="list-none text-3xl hover:underline"
+            onClick={handleClose}
           >
-            {item.name}
+            <Link to={item.link}>{item.name}</Link>
           </li>
         ))}
       </div>
