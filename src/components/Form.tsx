@@ -43,7 +43,8 @@ export default function Form() {
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
+    <section className="relative min-h-screen overflow-hidden">
+    <div className="min-h-screen flex justify-center items-center">
       <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-start text-gray-800 mb-6">
           Get in Touch
@@ -95,5 +96,6 @@ export default function Form() {
         )}
       </div>
     </div>
+     </section>
   );
 }

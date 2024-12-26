@@ -27,3 +27,9 @@ input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
   appearance: none;
 }
+
+
+
+.containercont{
+  background-image: url("/public/bgimage.jpg");
+}

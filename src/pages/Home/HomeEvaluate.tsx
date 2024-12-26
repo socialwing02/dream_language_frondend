@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/Button";
 import evaluateImg from "../../assets/images/evaluate.jpg";
 import { motion } from "framer-motion";
 import { fadeIn, staggerChild, staggerParent } from "@/utils/variant";
+import { Link } from "react-router-dom";
 
 export default function HomeEvaluate() {
   return (
-    <div className="container my-10 mx-auto  ">
+    <div className="bg-gradient-to-r from-white to-purple-100 w-full py-16 ">
       <h1 className="py-[2rem] text-[clamp(2.5rem,2vw,5rem)] text-pretty pl-16">
-        Grow Up You learn Skill
+        Why Choose DREAM LANGUAGE ACADEMY?
       </h1>
       <section className="flex flex-col-reverse lg:flex-row justify-center items-center gap-8  ">
         {/* content */}
@@ -19,16 +20,24 @@ export default function HomeEvaluate() {
           viewport={{ once: true }}
         >
           <motion.p
-            className="w-[min(50ch,90vw)]  text-lg leading-8 justify-self-center"
+            className="w-[min(50ch,90vw)]  text-lg leading-8  justify-self-center"
             viewport={{ once: true }}
             variants={fadeIn("left", 0.2)}
             initial="hidden"
             whileInView="show"
           >
-            Step into an English academy and unlock your potential, Mastering
-            language skills essential and instrumental. Build confidence to
-            speak, write, and thrive, Achieve your dreams and see your goals
-            come alive!
+            ✅ Expert Instructors: Learn from certified professionals..
+            <br />
+            ✅ Tailored Courses: Programs designed to match your learning pace
+            and goals.
+            <br />
+            ✅ Interactive Learning: Engaging lessons with practical exercises
+            and activities.
+            <br />
+            ✅ Flexible Scheduling: Study at your convenience with customizable
+            timings.
+            <br />✅ Proven Results: Trusted by thousands of students worldwide
+            for success.
           </motion.p>
 
           <motion.div
@@ -36,36 +45,20 @@ export default function HomeEvaluate() {
             variants={staggerChild()}
             viewport={{ once: true }}
           >
-            <Button>Get Started</Button>
-            <Button variant="ghost">Evaluate Us</Button>
+            <Button className="bg-violet-900  text-white hover:bg-violet-600 hover:text-black" >
+              <Link to={"contact"}>Get Started</Link>
+            </Button>
+            <Button  className="bg-violet-900  text-white hover:bg-violet-600 hover:text-black" variant="ghost">
+              <a
+                href={`https://wa.me/7845777082`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Evaluate Us
+              </a>
+            </Button>
           </motion.div>
-
-          <div className="flex justify-around flex-wrap gap-4 mt-[1.5rem]">
-            <motion.div
-              className="grid"
-              variants={staggerChild()}
-              viewport={{ once: true }}
-            >
-              <span className="justify-self-center font-bold">20k +</span>
-              <p>Total courses</p>
-            </motion.div>
-            <motion.div
-              className="grid"
-              variants={staggerChild()}
-              viewport={{ once: true }}
-            >
-              <span className="justify-self-center font-bold">200k +</span>
-              <p>Happy Students</p>
-            </motion.div>
-            <motion.div
-              className="grid"
-              variants={staggerChild()}
-              viewport={{ once: true }}
-            >
-              <span className="justify-self-center font-bold">500 +</span>
-              <p>Expert Teachers</p>
-            </motion.div>
-          </div>
         </motion.article>
         {/* image */}
         <div className="w-[min(450px,90vw)] relative">

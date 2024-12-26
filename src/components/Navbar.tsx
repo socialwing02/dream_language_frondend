@@ -5,6 +5,7 @@ import hamburgIcon from "@/assets/svg/hamburg.svg";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import { motion } from "framer-motion";
+import logo from "/Users/apple/Desktop/Desktop/dream/dream_language_frondend/src/assets/images/Dream_language_academy.png";
 import { staggerChild, staggerParent } from "@/utils/variant";
 
 type Props = {
@@ -15,7 +16,7 @@ export default function Navbar({ className }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   let defaultClass =
-    "flex justify-between px-8 py-6 items-center sticky top-0 z-2 ";
+    "flex justify-between px-8 py-0 items-center sticky top-0 z-2 ";
   defaultClass += className;
   const buttonstyle = className
     ? "bg-white text-black hover:text-white "
@@ -38,13 +39,13 @@ export default function Navbar({ className }: Props) {
           initial="initial"
           animate="animate"
         >
-          logo
+          <img className= " w-[120px]" src={logo}></img>
         </motion.h1>
 
         <img
           src={hamburgIcon}
           alt=""
-          className={`inline-block sm:hidden  p-2 ${
+          className={`inline-block sm:hidden  p-0 ${
             className ? "bg-white rounded-full" : ""
           }`}
           onClick={() => setIsOpen(true)}
@@ -66,7 +67,7 @@ export default function Navbar({ className }: Props) {
                 to={list.link}
                 className={({ isActive }) =>
                   `transition-colors duration-300 ${
-                    isActive ? "text-blue-400" : className ? "" : "text-black"
+                    isActive ? "text-blue-400" : "text-black"
                   }`
                 }
               >
@@ -77,7 +78,7 @@ export default function Navbar({ className }: Props) {
           ))}
         </motion.ul>
         <motion.div
-          className="hidden sm:inline-block"
+          className="hidden mr-9 sm:inline-block"
           variants={staggerChild()}
           initial="initial"
           animate="animate"
