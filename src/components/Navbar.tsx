@@ -5,8 +5,7 @@ import hamburgIcon from "@/assets/svg/hamburg.svg";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import { motion } from "framer-motion";
-import logo from "/Users/apple/Desktop/Desktop/dream/dream_language_frondend/src/assets/images/Dream_language_academy.png";
-import { staggerChild, staggerParent } from "@/utils/variant";
+import logo from "../assets/images/logo/Dream_language_academy.png";
 
 type Props = {
   className?: string;
@@ -34,12 +33,8 @@ export default function Navbar({ className }: Props) {
   return (
     <section>
       <nav className={defaultClass}>
-        <motion.h1
-          variants={staggerChild()}
-          initial="initial"
-          animate="animate"
-        >
-          <img className= " w-[120px]" src={logo}></img>
+        <motion.h1>
+          <img className=" w-[120px]" src={logo}></img>
         </motion.h1>
 
         <img
@@ -51,18 +46,9 @@ export default function Navbar({ className }: Props) {
           onClick={() => setIsOpen(true)}
         />
 
-        <motion.ul
-          className="hidden gap-8 sm:flex"
-          variants={staggerParent()}
-          initial="initial"
-          animate="animate"
-        >
+        <motion.ul className="hidden gap-8 sm:flex">
           {navlist.map((list) => (
-            <motion.li
-              key={list.name}
-              className="relative group text-lg"
-              variants={staggerChild()}
-            >
+            <motion.li key={list.name} className="relative group text-lg">
               <NavLink
                 to={list.link}
                 className={({ isActive }) =>
@@ -79,7 +65,6 @@ export default function Navbar({ className }: Props) {
         </motion.ul>
         <motion.div
           className="hidden mr-9 sm:inline-block"
-          variants={staggerChild()}
           initial="initial"
           animate="animate"
         >

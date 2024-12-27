@@ -8,6 +8,9 @@
   }
 }
 
+p {
+  text-wrap: pretty;
+}
 /* index.css */
 @layer utilities {
   .custom-border {
@@ -28,8 +31,41 @@ input::-webkit-outer-spin-button {
   appearance: none;
 }
 
-
-
-.containercont{
+.containercont {
   background-image: url("/public/bgimage.jpg");
 }
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  gap: 2rem;
+  margin-block: 2rem;
+  padding-inline: 2rem;
+
+  @media (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.testimonial:nth-child(1) {
+  grid-column: span 2;
+}
+
+.testimonial:nth-child(2) {
+  grid-row: span 2;
+}
+
+.testimonial:nth-child(3) {
+  grid-row: span 2;
+}
+
+.testimonial:nth-child(6) {
+  grid-column: span 1;
+}
+
+.testimonial:nth-child(5) {
+  grid-column: span 2;
+}
+
+/* Override for mobile layout */

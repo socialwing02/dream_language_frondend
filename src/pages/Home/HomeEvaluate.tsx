@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import evaluateImg from "../../assets/images/evaluate.jpg";
+import evaluateImg from "../../assets/images/home/evaluate.jpg";
 import { motion } from "framer-motion";
 import { fadeIn, staggerChild, staggerParent } from "@/utils/variant";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ export default function HomeEvaluate() {
       <h1 className="py-[2rem] text-[clamp(2.5rem,2vw,5rem)] text-pretty pl-16">
         Why Choose DREAM LANGUAGE ACADEMY?
       </h1>
-      <section className="flex flex-col-reverse lg:flex-row justify-center items-center gap-8  ">
+      <section className="flex flex-col-reverse lg:flex-row justify-center items-center gap-16  ">
         {/* content */}
         <motion.article
           className=" grid gap-6 "
@@ -19,36 +19,47 @@ export default function HomeEvaluate() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <motion.p
-            className="w-[min(50ch,90vw)]  text-lg leading-8  justify-self-center"
+          <motion.ul
+            className="w-[min(50ch,90vw)] grid gap-2  text-lg leading-8  justify-self-center"
             viewport={{ once: true }}
             variants={fadeIn("left", 0.2)}
             initial="hidden"
             whileInView="show"
           >
-            ✅ Expert Instructors: Learn from certified professionals..
-            <br />
-            ✅ Tailored Courses: Programs designed to match your learning pace
-            and goals.
-            <br />
-            ✅ Interactive Learning: Engaging lessons with practical exercises
-            and activities.
-            <br />
-            ✅ Flexible Scheduling: Study at your convenience with customizable
-            timings.
-            <br />✅ Proven Results: Trusted by thousands of students worldwide
-            for success.
-          </motion.p>
+            <li className="list-disc">
+              <span className="font-semibold">Expert Instructors : </span> Learn
+              from certified professionals..
+            </li>
+            <li className="list-disc">
+              <span className="font-semibold"> Tailored Courses : </span>
+              Programs designed to match your learning pace and goals.
+            </li>
+            <li className="list-disc">
+              <span className="font-semibold">Interactive Learning : </span>
+              Engaging lessons with practical exercises and activities.
+            </li>
+            <li className="list-disc">
+              <span className="font-semibold">Flexible Scheduling : </span>
+              Study at your convenience with customizable timings.
+            </li>
+            <li className="list-disc">
+              <span className="font-semibold"> Proven Results : </span>
+              Trusted by thousands of students worldwide for success.
+            </li>
+          </motion.ul>
 
           <motion.div
             className="flex gap-5 items-center justify-center lg:justify-start"
             variants={staggerChild()}
             viewport={{ once: true }}
           >
-            <Button className="bg-violet-900  text-white hover:bg-violet-600 hover:text-black" >
+            <Button className="bg-violet-900  text-white hover:bg-violet-600 hover:text-black">
               <Link to={"contact"}>Get Started</Link>
             </Button>
-            <Button  className="bg-violet-900  text-white hover:bg-violet-600 hover:text-black" variant="ghost">
+            <Button
+              className="bg-violet-900  text-white hover:bg-violet-600 hover:text-black"
+              variant="ghost"
+            >
               <a
                 href={`https://wa.me/7845777082`}
                 target="_blank"

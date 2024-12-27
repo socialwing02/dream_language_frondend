@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import OurValues from "../About/OurValues";
-import whyus from "@/assets/images/whyus.webp";
+import whyus from "@/assets/images/home/visionImg2.webp";
 import { fadeIn } from "@/utils/variant";
 
 function About() {
